@@ -46,3 +46,40 @@ python3 main.py
 ![Screenshot 2023-12-10 110416](https://github.com/sattisatyanarayanareddy/Image_Encryption/assets/113776283/7a762781-7cfd-4919-b17e-6ef06a1a4196)
 
 ![Screenshot 2023-12-10 110524](https://github.com/sattisatyanarayanareddy/Image_Encryption/assets/113776283/de7f1251-15e7-4f9b-afad-0008256658b1)
+
+
+**Deep Explanation For this code**
+This Python code is a basic graphical user interface (GUI) application using the Tkinter library for image encryption and decryption. The application allows a user to select a PNG image file, enter a numerical key, and then either encrypt or decrypt the selected image based on a simple bitwise XOR operation.
+
+Here's a brief explanation of the code:
+
+1. **Importing Libraries:**
+   - `from tkinter import *`: Imports all classes and functions from the Tkinter library for creating the GUI.
+   - `from tkinter import filedialog`: Import the filedialog module to open file dialogs for selecting files.
+
+2. **Creating the GUI Window:**
+   - `root = Tk()`: Creates the main Tkinter window.
+   - `root.geometry("300x160")`: Sets the initial size of the window.
+   - `root.title("Image Encryption and Decryption")`: Sets the title of the window.
+
+3. **Function Definitions:**
+   - `encrypt_image()`: Opens a file dialog for selecting a PNG image file, prompts the user for a numerical key, and then performs bitwise XOR encryption on the image using the entered key.
+   - `decrypt_image()`: Similar to `encrypt_image()`, but performs decryption using the same XOR operation.
+
+4. **Buttons and Text Entry:**
+   - `b1` and `b2`: Buttons labeled "Encrypt" and "Decrypt," respectively. Clicking these buttons triggers the corresponding encryption or decryption function.
+   - `entry1`: A Text widget for the user to enter the encryption/decryption key.
+
+5. **Main Event Loop:**
+   - `root.mainloop()`: Enters the main event loop, allowing the GUI to respond to user interactions.
+
+6. **Encryption and Decryption Process:**
+   - The selected image file is opened in binary mode (`'rb'`), and its contents are read into a bytearray.
+   - The key entered by the user is converted to an integer.
+   - Each byte of the image is XORed with the key to perform encryption or decryption.
+   - The modified bytearray is then written back to the same file in binary mode (`'wb'`).
+
+7. **Print Statements:**
+   - Messages indicating the success or failure of encryption/decryption are printed to the console.
+
+Note: The code has a potential issue; it performs both encryption and decryption using the same XOR operation. In practice, encryption and decryption processes are usually different. Additionally, it would be more secure to use a stronger encryption algorithm and handle key management more robustly
